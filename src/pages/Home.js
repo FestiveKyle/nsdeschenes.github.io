@@ -8,22 +8,18 @@ const Home = () => {
     <Layout mb="5em">
       <Center
         height="100vh"
-        position="relative"
-        bgGradient="linear(to-r, green.200, pink.500)"
+        bgGradient="linear(to-b, green.200, pink.500)"
       >
         <Box
           width="100%"
           height="100%"
-          textAlign="center"
-          verticalAlign="center"
-          position="relative"
           bg="#E2E8F0"
           color="#000000"
           style={{
             mixBlendMode: 'screen',
           }}
         >
-          <Heading size="4xl">Welcome</Heading>
+          <Heading left="0px" right="0px" top="50vh" bottom="50vh" position="fixed" size="4xl" textAlign="center">Welcome</Heading>
         </Box>
       </Center>
       <Text>
