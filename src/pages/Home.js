@@ -1,28 +1,62 @@
 import React from 'react'
+import Particles from 'react-particles-js'
 import { Box, Center, Heading, Text } from '@chakra-ui/react'
 
 import { Layout } from '../components/Layout'
 
 const Home = () => {
+  const dotOpacity = 1
+  const lineOpacity = dotOpacity
+
   return (
     <Layout mb="5em">
-      <Center
-        height="100vh"
-        bgGradient="linear(to-b, green.200, pink.500)"
-      >
-        <Box
-          width="100%"
-          height="100%"
-          bg="#E2E8F0"
-          color="#000000"
-          style={{
-            mixBlendMode: 'screen',
+      <Center height="100vh" bg="gray.800">
+        <Particles
+          params={{
+            particles: {
+              color: {
+                value: '#E10098',
+              },
+              line_linked: {
+                color: '#E10098',
+                opacity: lineOpacity,
+              },
+              number: {
+                value: 200,
+              },
+              shape: {
+                type: 'circle',
+              },
+              opacity: {
+                value: dotOpacity,
+              },
+              size: {
+                random: false,
+                value: 2,
+              },
+            },
           }}
+          height="100%"
+          width="100vw"
         >
-          <Heading left="0px" right="0px" top="50vh" bottom="50vh" position="fixed" size="4xl" textAlign="center">Welcome</Heading>
-        </Box>
+          <Box
+            textAlign="center"
+            display="inline-block"
+            color="#5CA17C"
+            bgGradient="linear(to-b, green.200, pink.200)"
+            backgroundAttachment="fixed"
+            style={{
+              '-webkit-background-clip': 'text',
+              '-webkit-text-fill-color': 'transparent',
+            }}
+          >
+            <Heading size="4xl" textAlign="center" top="0">
+              WELCOME
+            </Heading>
+          </Box>
+        </Particles>
       </Center>
-      <Text>
+      <Text pt="50px">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet
         varius justo. Vivamus porttitor turpis in tortor feugiat dapibus. Nulla
         non interdum turpis, quis facilisis massa. Suspendisse nec tellus
