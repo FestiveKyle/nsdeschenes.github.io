@@ -1,17 +1,72 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import Particles from 'react-particles-js'
-import { Box, Center, Heading, Text } from '@chakra-ui/react'
+import { Center, Heading, Text, useBreakpoint } from '@chakra-ui/react'
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 import { Layout } from '../components/Layout'
 
 const Home = () => {
-  const dotOpacity = 1
-  const lineOpacity = dotOpacity
+  gsap.registerPlugin(ScrollTrigger)
+
+  const currentBreakpoint = useBreakpoint()
+  let particleCount
+  switch (currentBreakpoint) {
+    case 'sm':
+      particleCount = 25
+      break
+    case 'md':
+      particleCount = 75
+      break
+    default:
+      particleCount = 200
+      break
+  }
+
+  const ref = useRef(null)
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('.particles'),
+      {
+        opacity: 0.4,
+      },
+      {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: element.querySelector('.particles'),
+          start: 'top top',
+          endTrigger: element.querySelector('.welcomeParagraph'),
+          scrub: true,
+        },
+      },
+    )
+  }, [])
+
+  useEffect(() => {
+    const element = ref.current
+    gsap.fromTo(
+      element.querySelector('.welcomeText'),
+      {
+        opacity: 1,
+      },
+      {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: element.querySelector('.particles'),
+          start: 'top top-=100px',
+          endTrigger: element.querySelector('.welcomeParagraph'),
+          scrub: true,
+        },
+      },
+    )
+  }, [])
 
   return (
     <Layout mb="5em">
-      <Center height="100vh" bg="gray.800">
+      <Center height="100vh" ref={ref}>
         <Particles
+          className="particles"
           params={{
             particles: {
               color: {
@@ -19,44 +74,32 @@ const Home = () => {
               },
               line_linked: {
                 color: '#E10098',
-                opacity: lineOpacity,
+                opacity: 1,
               },
               number: {
-                value: 200,
+                value: particleCount,
               },
               shape: {
                 type: 'circle',
               },
               opacity: {
-                value: dotOpacity,
+                value: 1,
               },
               size: {
                 random: false,
                 value: 2,
               },
             },
+            fpsLimit: 30,
           }}
-          height="100%"
-          width="100vw"
-        >
-          <Box
-            textAlign="center"
-            display="inline-block"
-            color="#5CA17C"
-            bgGradient="linear(to-b, green.200, pink.200)"
-            backgroundAttachment="fixed"
-            style={{
-              '-webkit-background-clip': 'text',
-              '-webkit-text-fill-color': 'transparent',
-            }}
-          >
-            <Heading size="4xl" textAlign="center" top="0">
-              WELCOME
-            </Heading>
-          </Box>
-        </Particles>
+          height="100vh"
+          width="90vw"
+        />
+        <Heading position="absolute" size="4xl" className="welcomeText">
+          WELCOME
+        </Heading>
       </Center>
-      <Text pt="50px">
+      <Text pt="50px" pb="500px" className="welcomeParagraph">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet
         varius justo. Vivamus porttitor turpis in tortor feugiat dapibus. Nulla
         non interdum turpis, quis facilisis massa. Suspendisse nec tellus
