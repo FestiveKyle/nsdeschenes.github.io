@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.js": "/static/js/main.710cc377.chunk.js",
+    "main.js.map": "/static/js/main.710cc377.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.cdeaac47.js",
+    "runtime-main.js.map": "/static/js/runtime-main.cdeaac47.js.map",
+    "static/js/2.bbadf425.chunk.js": "/static/js/2.bbadf425.chunk.js",
+    "static/js/2.bbadf425.chunk.js.map": "/static/js/2.bbadf425.chunk.js.map",
+    "static/js/3.f856a0f3.chunk.js": "/static/js/3.f856a0f3.chunk.js",
+    "static/js/3.f856a0f3.chunk.js.map": "/static/js/3.f856a0f3.chunk.js.map",
+    "static/js/4.d7f83775.chunk.js": "/static/js/4.d7f83775.chunk.js",
+    "static/js/4.d7f83775.chunk.js.map": "/static/js/4.d7f83775.chunk.js.map",
+    "static/js/5.e21d7859.chunk.js": "/static/js/5.e21d7859.chunk.js",
+    "static/js/5.e21d7859.chunk.js.map": "/static/js/5.e21d7859.chunk.js.map",
+    "index.html": "/index.html",
+    "static/js/2.bbadf425.chunk.js.LICENSE.txt": "/static/js/2.bbadf425.chunk.js.LICENSE.txt",
+    "static/media/github.e377eed4.svg": "/static/media/github.e377eed4.svg",
+    "static/media/lingui_graphql.2e0d1a32.png": "/static/media/lingui_graphql.2e0d1a32.png",
+    "static/media/react_logo.6343562a.png": "/static/media/react_logo.6343562a.png",
+    "static/media/redis_graphql.76d5f719.png": "/static/media/redis_graphql.76d5f719.png",
+    "static/media/tracker_logo.4e9bc39c.png": "/static/media/tracker_logo.4e9bc39c.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cdeaac47.js",
+    "static/js/2.bbadf425.chunk.js",
+    "static/js/main.710cc377.chunk.js"
+  ]
+}
