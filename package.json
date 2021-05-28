@@ -29,10 +29,12 @@
   },
   "homepage": "https://nsdeschenes.github.io/",
   "dependencies": {
+    "@apollo/client": "^3.3.19",
     "@chakra-ui/icons": "^1.0.4",
     "@chakra-ui/react": "^1.1.5",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
+    "graphql": "^15.5.0",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -55,6 +57,6 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-standard": "^4.0.1",
     "execa": "^1.0.0",
-    "prettier": "^2.2.1"
+    "prettier": "^2.3.0"
   }
 }
